@@ -5,23 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>add title of landing page</title>
   <style>
-    /* Removes default margins and sets up a full-height layout */
+    /* Forces a left-to-right layout for the whole page */
     body {
       margin: 0;
       display: flex;
+      flex-direction: row; 
       min-height: 100vh;
       font-family: Arial, sans-serif;
     }
 
-    /* Styles for the left navigation bar */
+    /* Left Navigation Bar */
     nav {
       width: 250px;
+      min-width: 250px; /* Prevents the bar from collapsing on smaller screens */
       background-color: #2c3e50;
       padding: 20px;
       box-sizing: border-box;
     }
 
-    /* Styles for the navigation links */
     nav a {
       display: block;
       color: white;
@@ -36,33 +37,71 @@
       background-color: #465c71;
     }
 
-    /* Styles for the main content area */
-    main {
+    /* Right Side (Content + Footer) */
+    .page-wrapper {
       flex: 1;
-      padding: 40px;
+      display: flex;
+      flex-direction: column;
       background-color: #f4f4f9;
+    }
+
+    /* Main Content Area */
+    main {
+      flex: 1; /* Expands to push the footer to the bottom */
+      padding: 40px;
     }
 
     h1 {
       margin-top: 0;
       color: #333;
     }
+
+    /* Footer */
+    footer {
+      background-color: #e2e2e2;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+    }
+
+    footer a {
+      color: #2c3e50;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar (Left) -->
   <nav>
     <a href="#">Topic 1</a>
     <a href="#">Topic 2</a>
-    <a href="#">Topic</a>
+    <a href="#">Topic 3</a>
   </nav>
 
-  <!-- Main Content -->
-  <main>
-    <h1>add title of landing page</h1>
-    <p>Welcome to your new GitHub Pages landing page. You can add your main content and image gallery here.</p>
-  </main>
+  <!-- Right Side Wrapper -->
+  <div class="page-wrapper">
+    
+    <!-- Main Content -->
+    <main>
+      <h1>add title of landing page</h1>
+      <p>Welcome to your new GitHub Pages landing page. You can add your main content and image gallery here.</p>
+    </main>
+
+    <!-- Footer (Bottom) -->
+    <footer>
+      <a href="#">Footer Link 1</a>
+      <a href="#">Footer Link 2</a>
+      <a href="#">Footer Link 3</a>
+    </footer>
+
+  </div>
 
 </body>
 </html>
